@@ -12,7 +12,7 @@ services:
     ports:
       - 1521:1521
     networks:
-      spring-demo
+      - spring-demo
     restart: unless-stopped
   mail-dev:
     container_name: mail-dev-uread
