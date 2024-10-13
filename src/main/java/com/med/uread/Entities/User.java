@@ -1,7 +1,9 @@
 package com.med.uread.Entities;
 
+import com.med.uread.History.BookTransactionHistory;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -18,7 +20,7 @@ import java.util.stream.Collectors;
 
 @Getter
 @Setter
-@Builder
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
@@ -30,16 +32,26 @@ public class User implements UserDetails, Principal {
     @Id
     @GeneratedValue
     private Integer id;
+
     private String firstname;
     private String lastname;
     private LocalDate dateOfBirth;
+
     @Column(unique = true)
     private String email;
+
     private String password;
     private boolean accountLocked;
     private boolean enabled;
+
     @ManyToMany(fetch = FetchType.EAGER)
     private List<Role> roles;
+
+    @OneToMany(mappedBy = "owner")
+    private List<Book> books;
+
+    @OneToMany(mappedBy = "user")
+    private List<BookTransactionHistory> histories;
 
     @CreatedDate
     @Column(nullable = false, updatable = false)
@@ -47,7 +59,7 @@ public class User implements UserDetails, Principal {
 
     @LastModifiedDate
     @Column(insertable = false)
-    private LocalDateTime lastModifiedDate;
+    private LocalDateTime updatedDate;
 
     @Override
     public String getName() {
