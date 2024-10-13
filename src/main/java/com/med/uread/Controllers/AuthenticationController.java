@@ -1,4 +1,4 @@
-package com.med.uread.Auth;
+package com.med.uread.Controllers;
 
 import com.med.uread.Services.AuthenticationRequest;
 import com.med.uread.Services.AuthenticationResponse;

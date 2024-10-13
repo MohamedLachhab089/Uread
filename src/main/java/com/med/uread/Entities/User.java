@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "`User`")
+@Table(name = "Users")
 @EntityListeners(AuditingEntityListener.class)
 // est un écouteur spécifique qui permet de gérer automatiquement les champs d'audit, comme createdDate, lastModifiedDate, createdBy, et lastModifiedBy, lorsque des entités sont persistées ou mises à jour
 public class User implements UserDetails, Principal {
