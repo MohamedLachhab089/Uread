@@ -1,4 +1,4 @@
-package com.med.uread.Services;
+package com.med.uread.Request_Response;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotEmpty;

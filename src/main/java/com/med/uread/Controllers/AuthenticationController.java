@@ -1,9 +1,9 @@
 package com.med.uread.Controllers;
 
-import com.med.uread.Services.AuthenticationRequest;
-import com.med.uread.Services.AuthenticationResponse;
+import com.med.uread.Request_Response.AuthenticationRequest;
+import com.med.uread.Request_Response.AuthenticationResponse;
 import com.med.uread.Services.AuthenticationService;
-import com.med.uread.Services.RegistrationRequest;
+import com.med.uread.Request_Response.RegistrationRequest;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.mail.MessagingException;
 import jakarta.validation.Valid;

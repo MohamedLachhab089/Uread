@@ -10,7 +10,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
-@EnableJpaAuditing // Elle permet à Spring Data JPA de surveiller les entités et de gérer automatiquement certains champs d'audit
+@EnableJpaAuditing(auditorAwareRef = "auditorAware") // Elle permet à Spring Data JPA de surveiller les entités et de gérer automatiquement certains champs d'audit
 @EnableAsync
 public class UreadApplication {
 
