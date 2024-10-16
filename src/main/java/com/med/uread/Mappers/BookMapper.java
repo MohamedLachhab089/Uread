@@ -1,6 +1,7 @@
 package com.med.uread.Mappers;
 
 import com.med.uread.Entities.Book;
+import com.med.uread.File.FileUtils;
 import com.med.uread.History.BookTransactionHistory;
 import com.med.uread.Request_Response.BookRequest;
 import com.med.uread.Request_Response.BookResponse;
@@ -33,8 +34,7 @@ public class BookMapper {
                 .archived(book.isArchived())
                 .shareable(book.isShareable())
                 .owner(book.getOwner().fullName())
-                // TODO implement this later
-                // .cover()
+                .cover(FileUtils.readFileFromLocation(book.getBookCover()))
                 .build();
     }
 
