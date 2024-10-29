@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold text-primary" href="javascript:void(0)" routerLink="/books">URead</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent"
+            aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <!-- Navigation Links -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center gap-1" aria-current="page" routerLink="/books">
+            <i class="fas fa-home-alt"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center gap-1" routerLink="my-books">
+            <i class="fas fa-book"></i> My Books
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center gap-1" routerLink="my-waiting-list">
+            <i class="fas fa-heart"></i> Waiting List
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center gap-1" routerLink="my-returned-books">
+            <i class="fa-solid fa-truck-fast"></i> Returned Books
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link d-flex align-items-center gap-1" routerLink="my-borrowed-books">
+            <i class="fas fa-list-check"></i> Borrowed Books
+          </a>
+        </li>
+      </ul>
+
+      <!-- Search and User Controls -->
+      <form class="d-flex gap-3 align-items-center">
+        <input class="form-control" type="search" placeholder="Find a book" aria-label="Search">
+        <button class="btn btn-outline-primary d-flex align-items-center" type="submit">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="btn btn-link text-decoration-none text-muted d-flex align-items-center gap-1" type="button" (click)="logout()">
+          Logout <i class="fa fa-door-open"></i>
+        </button>
+      </form>
+    </div>
+  </div>
+</nav>

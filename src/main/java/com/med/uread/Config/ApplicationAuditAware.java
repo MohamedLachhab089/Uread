@@ -10,10 +10,10 @@ import java.util.Optional;
 
 // This mechanism is used to automatically populate audit fields, such as createdBy,
 // lastModifiedBy, etc., in entities that are audited.
-public class ApplicationAuditAware implements AuditorAware<Integer> {
+public class ApplicationAuditAware implements AuditorAware<String> {
 
     @Override
-    public Optional<Integer> getCurrentAuditor() {
+    public Optional<String> getCurrentAuditor() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null ||
                 !authentication.isAuthenticated() || authentication instanceof AnonymousAuthenticationToken) {
@@ -22,7 +22,7 @@ public class ApplicationAuditAware implements AuditorAware<Integer> {
 
         User userPrincipal = (User) authentication.getPrincipal();
 
-        return Optional.ofNullable(userPrincipal.getId());
+        return Optional.ofNullable(authentication.getName());
     }
 
 }
